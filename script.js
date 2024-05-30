@@ -6,7 +6,6 @@ const main = document.querySelector("main");
 const body = document.body;
 console.log(mobileMenuBtns);
 
-
 const getScrollbarWidth = () => {
   // Create a div with a large height and scroll
   const scrollDiv = document.createElement("div");
@@ -21,7 +20,7 @@ const getScrollbarWidth = () => {
   document.body.removeChild(scrollDiv);
 
   return scrollbarWidth;
-}
+};
 
 openMenuBtn.addEventListener("click", () => {
   mobileNav.classList.add("active");
@@ -38,5 +37,7 @@ closeMenuBtn.addEventListener("click", () => {
 mobileMenuBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     mobileNav.classList.remove("active");
+    body.classList.remove("scroll-disabled");
+    body.style.paddingRight = "0";
   });
 });
