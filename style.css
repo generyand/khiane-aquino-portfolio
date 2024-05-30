@@ -352,14 +352,16 @@ a,
 }
 
 /* Certificates */
-.certificates {
+.certificates,
+.projects {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   margin-block-end: 5rem;
 }
 
-.certificates h2 {
+.certificates h2,
+.projects h2 {
   text-align: center;
 }
 
@@ -375,31 +377,85 @@ a,
   flex-direction: column;
   align-items: flex-start;
   transition: all 0.1s ease-in-out;
-
+  outline: 1px solid var(--blue);
+  border-radius: 1rem;
   overflow: hidden;
+  background-color: var(--blue);
 }
 
 .certificate-card:hover {
   transform: translateY(-4px);
+  box-shadow: -1px 4px 4px 1px rgba(99, 99, 99, 0.4);
+  -webkit-box-shadow: -1px 4px 4px 1px rgba(99, 99, 99, 0.4);
+  -moz-box-shadow: -1px 4px 4px 1px rgba(99, 99, 99, 0.4);
 }
 
 .certificate-card img {
   object-fit: contain;
-  margin-block-end: 1rem;
+  margin-block-end: 1.25rem;
   width: 100%;
 }
 
 .certificate-card p {
   text-align: center;
   text-wrap: balance;
+  color: var(--white);
 }
 
 .certificate-card p:nth-of-type(1) {
   font-weight: bold;
+  margin: 0 auto;
 }
 
 .certificate-card p:nth-of-type(2) {
-  margin-block-end: 2rem;
+  margin: 0 auto;
+  margin-block-end: 1.75rem;
+}
+
+/* Projects */
+.projects-wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.project-card {
+  padding: 2rem;
+  flex-grow: 1;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  max-width: 24rem;
+  background-color: var(--blue);
+  border-radius: 0.5rem;
+  transition: all 0.1s ease-in-out;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: -1px 4px 4px 1px rgba(99, 99, 99, 0.4);
+  -webkit-box-shadow: -1px 4px 4px 1px rgba(99, 99, 99, 0.4);
+  -moz-box-shadow: -1px 4px 4px 1px rgba(99, 99, 99, 0.4);
+}
+
+.project-card > p:nth-child(1) {
+  margin: 0 auto;
+  font-weight: bold;
+  margin-block-end: 1rem;
+  font-size: 1.25rem;
+}
+
+.project-card > p:nth-child(2) {
+  margin-block-end: 1.75rem;
+  text-align: start !important;
+}
+
+.languages-used img {
+  width: clamp(2.5rem, 3vw, 4rem);
+  padding: 0.5rem;
+  background-color: var(--bg-white);
+  border-radius: 0.25rem;
 }
 
 /* Contact */
